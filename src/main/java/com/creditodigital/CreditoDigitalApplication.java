@@ -1,4 +1,4 @@
-package com.creditodigital.creditoDigital;
+package com.creditodigital;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
