@@ -1,11 +1,11 @@
 package com.creditodigital.servicies;
 
-import com.creditodigital.repositories.EmpresaRepository;
+import com.creditodigital.repositories.AssociatedRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class EmpresaService {
+public class AssociatedService {
     @Autowired
-    private EmpresaRepository empresaRepository;
+    private AssociatedRepository associatedRepository;
 }

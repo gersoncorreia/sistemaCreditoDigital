@@ -1,13 +1,13 @@
 package com.creditodigital.controllers;
 
-import com.creditodigital.servicies.AssociadoService;
+import com.creditodigital.servicies.CompanyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/associados")
-public class AssociadoController {
+@RequestMapping("/empresas")
+public class CompanyController {
     @Autowired
-    private AssociadoService associadoService;
+    private CompanyService companyService;
 }
