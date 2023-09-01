@@ -16,15 +16,72 @@ public class Person {
     private String cpf;
     private String rg;
 
-    @OneToMany(mappedBy = "phones", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany()
     private List<Phone> phones = new ArrayList<>();
 
-    @OneToMany(mappedBy = "addresses", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany()
     private List<Address> addresses = new ArrayList<>();
 
-    @OneToOne(mappedBy = "user")
+    @OneToOne()
+    @JoinColumn(name = "user_id")
     private User user;
 
+    public Person() {
+    }
 
+    public Person(String firstName, String lastName, Date birthDate, String cpf, String rg) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.birthDate = birthDate;
+        this.cpf = cpf;
+        this.rg = rg;
+    }
 
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public Date getBirthDate() {
+        return birthDate;
+    }
+
+    public void setBirthDate(Date birthDate) {
+        this.birthDate = birthDate;
+    }
+
+    public String getCpf() {
+        return cpf;
+    }
+
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
+    }
+
+    public String getRg() {
+        return rg;
+    }
+
+    public void setRg(String rg) {
+        this.rg = rg;
+    }
 }
