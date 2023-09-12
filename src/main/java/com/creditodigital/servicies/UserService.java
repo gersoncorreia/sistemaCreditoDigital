@@ -13,10 +13,16 @@ import java.util.stream.Collectors;
 public class UserService {
     @Autowired
     private UserRepository userRepository;
-    public UserDTO findById(Long id){
+    public UserDTO findById(String id){
         return new UserDTO(userRepository.findById(id).get());
     }
-
+    public User findByEmail(String email){
+        User user = userRepository.findByEmail(email);
+        if(user == null){
+            throw new RuntimeException("Usuário não encontrado");
+        }
+        return user;
+    }
     public List<UserDTO> listAllUsers(){
         List<User> users = userRepository.findAll();
         return users.stream().map(this::convertToDto).collect(Collectors.toList());

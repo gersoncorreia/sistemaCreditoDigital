@@ -19,4 +19,5 @@ public class AssociatedService {
     public Associated registerAssociated(Associated associated){
         return associatedRepository.save(associated);
     }
+
 }
