@@ -15,4 +15,8 @@ public class AssociatedService {
         Associated entity = associatedRepository.findById(id).get();
         return new AssociatedDTO(entity);
     }
+
+    public Associated registerAssociated(Associated associated){
+        return associatedRepository.save(associated);
+    }
 }
